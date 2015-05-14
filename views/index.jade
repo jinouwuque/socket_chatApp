@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}, Please input your name
+  form(class = 'uk-form ul-form-controls logoinArea')
+      input#usernameBtn(type = "text" class = 'uk-margin-bottom')
+      br
+      input(type = 'radio' id = 'iconr1' name = 'iconradio')
+      label(for = 'iconr1')
+          i(class='fa fa-child fa-3x')
+      input(type = 'radio' id = 'iconr2' name = 'iconradio')
+      label(for = 'iconr2')
+          i(class='fa fa-camera-retro fa-3x')
+      input(type = 'radio' id = 'iconr3' name = 'iconradio')
+      label(for = 'iconr3')
+          i(class='fa fa-bug fa-3x')
+      br
+      button#createUserBtn(type = 'button' class='uk-button uk-button-primary uk-margin-top') Start
+
+  Div.chartArea(class= 'uk-margin-top' style='border: 1px solid black; width: 500px; height: 600px;')
+      ul.messagelist
+          li this is my first test
+      div(style='top: 450px; position:relative')
+          form(class = 'uk-form')
+              input#chartinput(type = 'text' style='width: 250px;' class = 'uk-margin-left')
+              button#sendbtn(class = 'uk-button uk-button-success') Send Message
+
+
+   script(type='text/javascript' src= '/javascripts/createuser.js')

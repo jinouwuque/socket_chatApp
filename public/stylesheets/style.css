@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  padding: 10px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -13,25 +13,59 @@ a {
   display: inline-block;
 }
 .iconmsg{
-  height: 48px;
-  width: 48px;
-  margin-left:2px;
+  height: 36px;
+  width: 36px;
   display: inline-block;
-  background-size: 48px 48px;
-  margin: 5px;
+  background-size: 36px 36px;
+  margin: 5px 10px 5px 5px;
 }
 
 .chartArea{
-  border: 1px solid black;
-  width: 600px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  width: 700px;
   height: 600px;
-  overflow:scroll;
-  overflow-x:hidden;
   padding: 30px 20px 20px 5px;
 }
 
+.chartArea1{
+    height: 590px;
+    overflow:scroll;
+    overflow-x:hidden;
+}
+.onemsg{
+    border-bottom: solid #eee 1px;
+    margin-bottom: 6px;
+}
 
+#alert-gbanner, #alert-rbanner{
+    display: none;
+    position: absolute;
+}
 
+.onlineuser{
+    margin: 30px 0 0 30px;
+    border: 2px solid #0091ca;
+    border-radius: 15px;
+    width: 330px;
+    height: 400px;
+    padding: 10px;
+}
+
+.onlineuser1{
+    margin: 6px;
+    width: 300px;
+    height: 400px;
+}
+
+#msginputcontainer{
+    border: solid 2px #07a4a9;
+    padding: 10px;
+    border-radius: 8px;
+}
+#chartinput{
+    border:1px solid #8fce48;
+}
 
 .icon1{
   background-image: url("../img/icon/h1.png")

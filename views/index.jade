@@ -2,29 +2,42 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}, Please input your name
+  p Please select your icon:
   form(class = 'uk-form ul-form-controls logoinArea')
-      input#usernameBtn(type = "text" class = 'uk-margin-bottom')
-      br
-      input(type = 'radio' id = 'iconr1' name = 'iconradio')
-      label(for = 'iconr1')
-          i(class='fa fa-child fa-3x')
-      input(type = 'radio' id = 'iconr2' name = 'iconradio')
-      label(for = 'iconr2')
-          i(class='fa fa-camera-retro fa-3x')
-      input(type = 'radio' id = 'iconr3' name = 'iconradio')
-      label(for = 'iconr3')
-          i(class='fa fa-bug fa-3x')
-      br
-      button#createUserBtn(type = 'button' class='uk-button uk-button-primary uk-margin-top') Start
 
-  Div.chartArea(class= 'uk-margin-top' style='border: 1px solid black; width: 500px; height: 600px;')
-      ul.messagelist
-          li this is my first test
-      div(style='top: 450px; position:relative')
-          form(class = 'uk-form')
+      each val in [1, 2, 3, 4, 5, 6, 7, 8]
+          input(type = 'radio' id = 'iconr'+val  name = 'iconradio' class='uk-margin-left')
+          label(for = 'iconr'+val)
+              div(class= 'icon-create uk-margin-bottom icon'+ val )
+          if val == 4
+              br
+      br
+      label(for='usernameBtn') Username:
+      input#usernameBtn(type = "text" class = 'uk-margin-bottom uk-margin-top' style='width: 400px')
+      br
+      button#createUserBtn(type = 'button' class='uk-button uk-button-primary uk-margin-top')
+          | Create
+          i(class='fa fa-user-plus uk-margin-left')
+
+  Div.chartArea(class= 'uk-margin-top')
+      ul.messagelist(style='list-style-type: none;')
+          li
+            div.iconmsg(class='icon2 uk-float-left')
+            div
+                h3 ZJ talk
+                p hello
+          li
+            div.iconmsg(class='icon3 uk-float-right')
+            div.uk-float-right
+              h3 ZJ talk
+              p hello
+  div(class='uk-margin-top')
+      form(class = 'uk-form')
+          div.uk-float-left
               input#chartinput(type = 'text' style='width: 250px;' class = 'uk-margin-left')
-              button#sendbtn(class = 'uk-button uk-button-success') Send Message
+              button#sendbtn(class = 'uk-button uk-button-success')
+                |Send Message
+                i(class='fa fa-paper-plane uk-margin-left')
 
 
    script(type='text/javascript' src= '/javascripts/createuser.js')

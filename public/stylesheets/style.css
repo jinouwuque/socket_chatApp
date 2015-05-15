@@ -6,3 +6,54 @@ body {
 a {
   color: #00B7FF;
 }
+.icon-create{
+  height: 64px;
+  width: 64px;
+  margin-left:2px;
+  display: inline-block;
+}
+.iconmsg{
+  height: 48px;
+  width: 48px;
+  margin-left:2px;
+  display: inline-block;
+  background-size: 48px 48px;
+  margin: 5px;
+}
+
+.chartArea{
+  border: 1px solid black;
+  width: 600px;
+  height: 600px;
+  overflow:scroll;
+  overflow-x:hidden;
+  padding: 30px 20px 20px 5px;
+}
+
+
+
+
+.icon1{
+  background-image: url("../img/icon/h1.png")
+}
+.icon2{
+  background-image: url("../img/icon/h2.png")
+}
+.icon3{
+  background-image: url("../img/icon/h3.png")
+}
+.icon4{
+  background-image: url("../img/icon/h4.png")
+}
+.icon5{
+  background-image: url("../img/icon/h5.png")
+}
+.icon6{
+  background-image: url("../img/icon/h6.png")
+}
+.icon7{
+  background-image: url("../img/icon/h7.png")
+}
+.icon8{
+  background-image: url("../img/icon/h8.png")
+}

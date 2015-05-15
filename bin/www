@@ -37,7 +37,7 @@ io.on('connection', function(socket){
     var addedUser = false;
     debugger;
     console.log('New User has been connected !');
-    socket.on('new message', function (data) {
+    socket.on('add new user', function (data) {
         // we tell the client to execute 'new message'
 
         socket.broadcast.emit('new message', {

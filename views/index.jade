@@ -1,59 +1,8 @@
 extends layout
-
 block content
   h1= title
   p Please select your icon:
   div.uk-grid
-      div.uk-width-1-2
-          form(class = 'uk-form ul-form-controls logoinArea')
-              each val in [1, 2, 3, 4, 5, 6, 7, 8]
-                  input(type = 'radio' id = 'iconr'+val name = 'iconradio' value = val class='uk-margin-left')
-                  label(for = 'iconr'+val)
-                      div(class= 'icon-create uk-margin-bottom icon'+ val )
-                  if val == 4
-                      br
-              br
-              label(for='usernameBtn') Username:
-              input#usernameBtn(type = "text" class = 'uk-margin-top' style='width: 310px')
-              button#createUserBtn(type = 'button' class='uk-button uk-button-primary uk-margin-top')
-                  | Create
-                  i(class='fa fa-user-plus uk-margin-left')
-          div.onlineuser
-              div.onlineuser1
-                  ul(class='uk-list')
-
-      div.uk-width-1-2
-          div#alert-gbanner(class='uk-alert uk-alert-success' style = 'width: 700px' data-uk-alert)
-              a(href = '#' class='uk-alert-close uk-close' data-uk-alert)
-              h3#greenalert Welcome who to join here
-          div#alert-rbanner(class='uk-alert uk-alert-danger' style = 'width: 700px' data-uk-alert)
-              a(href = '#' class='uk-alert-close uk-close')
-              h3#redalert This is a error messages
-          Div.chartArea(class= 'uk-margin-top')
-              div.chartArea1
-                  ul.messagelist(style='list-style-type: none;')
-                      li.onemsg
-                        div.iconmsg(class='icon2 uk-float-left')
-                        div.uk-float-left
-                            h3 ZJ talk
-                            p hello
-                        div(style='clear:both')
-                      li.onemsg
-                        div.iconmsg(class='icon3 uk-float-left')
-                        div
-                          h3 ZJ talk
-                          p hello
-          div(class='uk-margin-top')
-              form(class = 'uk-form')
-                  div.uk-float-left(id='msginputcontainer')
-                      input#chartinput(type = 'text' style='width: 250px;' class = 'uk-margin-right' autocomplete="off" )
-                      button#sendbtn(class = 'uk-button uk-button-success uk-margin-left')
-                        |Send Message
-                        i(class='fa fa-paper-plane uk-margin-left')
-          div#onemsgtemplate(style = 'display:none')
-              li.onemsg
-                  div.iconmsg(class='uk-float-left')
-                  div
-                      h3
-                      p
+      include login
+      include chat
   script(type='text/javascript' src= '/javascripts/socketcontrol.js')

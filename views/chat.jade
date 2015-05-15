@@ -1,0 +1,42 @@
+
+div.uk-grid
+
+    div(id = 'appsect2' class = 'uk-width-1-2')
+        div.onlineuser
+            div.onlineuser1
+                ul(class='uk-list')
+
+    div(id = 'appsect1' class = 'uk-width-1-2')
+        div#alert-gbanner(class='uk-alert uk-alert-success' style = 'width: 700px' data-uk-alert)
+            a(href = '#' class='uk-alert-close uk-close' data-uk-alert)
+            h3#greenalert Welcome who to join here
+            div#alert-rbanner(class='uk-alert uk-alert-danger' style = 'width: 700px' data-uk-alert)
+                a(href = '#' class='uk-alert-close uk-close')
+                h3#redalert This is a error messages
+        Div.chartArea(class= 'uk-margin-top')
+            div.chartArea1
+                ul.messagelist(style='list-style-type: none;')
+                    li.onemsg
+                        div.iconmsg(class='icon2 uk-float-left')
+                        div.uk-float-left
+                            h3 ZJ talk
+                            p hello
+                        div(style='clear:both')
+                    li.onemsg
+                        div.iconmsg(class='icon3 uk-float-left')
+                        div
+                            h3 ZJ talk
+                            p hello
+        div(class='uk-margin-top')
+            form(class = 'uk-form')
+                div.uk-float-left(id='msginputcontainer')
+                    input#chartinput(type = 'text' style='width: 250px;' class = 'uk-margin-right' autocomplete="off" )
+                    button#sendbtn(class = 'uk-button uk-button-success uk-margin-left')
+                        | Send Message
+                        i(class='fa fa-paper-plane uk-margin-left')
+        div#onemsgtemplate(style = 'display:none')
+            li.onemsg
+                div.iconmsg(class='uk-float-left')
+                div
+                    h3
+                    p

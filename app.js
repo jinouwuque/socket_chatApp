@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var chat = require('./routes/chat');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.locals.pretty = true;
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/chatting', chat);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

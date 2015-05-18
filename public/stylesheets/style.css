@@ -23,13 +23,13 @@ a {
 .chartArea{
   border: 1px solid #bbb;
   border-radius: 10px;
-  width: 700px;
-  height: 600px;
+  width: 600px;
+  height: 500px;
   padding: 30px 20px 20px 5px;
 }
 
 .chartArea1{
-    height: 590px;
+    height: 490px;
     overflow:scroll;
     overflow-x:hidden;
 }
@@ -44,7 +44,6 @@ a {
 }
 
 .onlineuser{
-    margin: 30px 0 0 30px;
     border: 2px solid #0091ca;
     border-radius: 15px;
     width: 330px;

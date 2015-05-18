@@ -1,17 +1,17 @@
-//
-   Created by anp_zguo on 5/15/2015.
 
-div
-    form(class = 'uk-form ul-form-controls logoinArea')
-        each val in [1, 2, 3, 4, 5, 6, 7, 8]
-            input(type = 'radio' id = 'iconr'+val name = 'iconradio' value = val class='uk-margin-left')
-            label(for = 'iconr'+val)
-                div(class= 'icon-create uk-margin-bottom icon'+ val )
-            if val == 4
-                br
-        br
-        label(for='usernameBtn') Username:
-        input#usernameBtn(type = "text" class = 'uk-margin-top' style='width: 310px')
-        button#createUserBtn(type = 'button' class='uk-button uk-button-primary uk-margin-top')
-            | Create
-            i(class='fa fa-user-plus uk-margin-left')
+
+div(id='loginSection' class = 'uk-vertical-align uk-text-center uk-height-1-1')
+    div(class = 'uk-vertical-align-middle' style = 'width: 550px;')
+        form(class = 'uk-form ul-form-controls logoinArea ')
+            each val in [1, 2, 3, 4, 5, 6, 7, 8]
+                input(type = 'radio' id = 'iconr'+val name = 'iconradio' value = val class='uk-margin-left')
+                label(for = 'iconr'+val)
+                    div(class= 'icon-create uk-margin-bottom icon'+ val )
+                if val == 4
+                    br
+            br
+            label(for='usernameBtn') Username:
+            input#usernameBtn(type = "text" class = 'uk-margin-top' style='width: 310px')
+            button#createUserBtn(type = 'button' class='uk-button uk-button-primary uk-margin-top')
+                | Create
+                i(class='fa fa-user-plus uk-margin-left')

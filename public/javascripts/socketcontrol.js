@@ -49,9 +49,15 @@ $(document).ready(function(){
             iconid: newiconid,
             username: username || 'test user'
         };
-        socket.emit('add new user', newuserinfo);
-        global.username = username;
-        global.iconid = newiconid;
+        $.ajax({
+            method: "POST",
+            url: "/adduser",
+            data: newuserinfo
+        }).done(function( msg ) {
+            debugger;
+            global.username = username;
+            global.iconid = newiconid;
+        });
     });
 
     $('#sendbtn').on('click', function(){

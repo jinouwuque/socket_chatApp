@@ -3,7 +3,11 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+    res.render('index');
 });
+router.post('/adduser', function(req, res, next) {
+    res.redirect('/chat');
+});
+
 
 module.exports = router;

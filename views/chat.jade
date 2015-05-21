@@ -5,6 +5,13 @@ block content
             div(class = 'onlineuser uk-margin-top uk-margin-left')
                 div.onlineuser1
                     ul(class='uk-list')
+                        each val in [1, 2, 3, 4, 5, 6, 7, 8]
+                            li
+                                input(type = 'checkbox' name = 'online-user' checked = 'checked' value = val)
+                                label
+                                    i(class = 'uk-icon-user')
+                                    | val
+
 
         div(id = 'appsect1')
             div#alert-gbanner(class='uk-alert uk-alert-success' style = 'width: 700px' data-uk-alert)

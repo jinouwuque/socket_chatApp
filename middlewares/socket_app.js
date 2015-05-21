@@ -14,7 +14,6 @@ function socket_app(io){
 
         socket.on('new message', function(data){
             var senderinfo = onlineusers[socket.id];
-            debugger;
             for(var i = 0; i < data.dest.length; i ++){
                 socket.to(data.dest[i]).emit('group msg', {
                     iconid: senderinfo.iconid,
@@ -64,3 +63,4 @@ function socket_app(io){
 }
 
 module.exports = socket_app;
+exports.onlineusers = onlineusers;

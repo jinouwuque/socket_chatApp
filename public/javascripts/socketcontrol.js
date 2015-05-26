@@ -49,15 +49,11 @@ $(document).ready(function(){
             iconid: newiconid,
             username: username || 'test user'
         };
-        $.ajax({
-            method: "POST",
-            url: "/adduser",
-            data: newuserinfo
-        }).done(function( msg ) {
-            debugger;
-            global.username = username;
-            global.iconid = newiconid;
-        });
+        socket.emit('add new user', newuserinfo);
+        global.username = username;
+        global.iconid = newiconid;
+        $('#loginSection').hide();
+        $('#chatSection').show();
     });
 
     $('#sendbtn').on('click', function(){
@@ -93,7 +89,9 @@ $(document).ready(function(){
     }
     function addtoUserlist(oneuser){
         var list = $('.onlineuser1 ul');
-        list.append('<li><input type="checkbox" name="online-user" checked="checked" value = "' + oneuser.userid + '"><label style = "color: ' + colors[oneuser.colorid % 77] + '"><i class="uk-icon-user"></i>' + oneuser.username + '</label></li>');
+        var tagstr = '<li><input type="checkbox" name="online-user" checked="checked" value = "' + oneuser.userid + '"><label style = "color: ' + colors[oneuser.colorid % 77] + '"><i class="uk-icon-user"></i>' + oneuser.username + '</label></li>';
+        list.append(tagstr);
+
     }
 
     function fillInReceiver(list){

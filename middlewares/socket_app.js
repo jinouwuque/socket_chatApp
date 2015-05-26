@@ -1,7 +1,5 @@
-var numUsers = 0;
-var onlineusers = {};
-var colorindex = 0;
 
+var online_status = require('../middlewares/online_status');
 function socket_app(io){
     io.on('connection', function(socket){
         for(var i = 0 ; i < 3; i ++){
@@ -13,7 +11,7 @@ function socket_app(io){
         }
 
         socket.on('new message', function(data){
-            var senderinfo = onlineusers[socket.id];
+            var senderinfo = online_status.onlineusers[socket.id];
             for(var i = 0; i < data.dest.length; i ++){
                 socket.to(data.dest[i]).emit('group msg', {
                     iconid: senderinfo.iconid,
@@ -24,14 +22,14 @@ function socket_app(io){
         });
         socket.on('add new user', function (data) {
             // we tell the client to execute 'new message'
-            onlineusers[socket.id] = {
+            online_status.onlineusers[socket.id] = {
                 username: data.username,
                 iconid : data.iconid,
                 userid: socket.id,
-                colorid : colorindex++
+                colorid : online_status.colorindex++
             };
-            numUsers ++;
-            socket.broadcast.emit('inf_updateUsers', onlineusers);
+            online_status.numUsers ++;
+            socket.broadcast.emit('inf_updateUsers', online_status.onlineusers);
             socket.emit('ack_conn', socket.id);
         });
 
@@ -51,16 +49,15 @@ function socket_app(io){
 
         // when the user disconnects.. perform this
         socket.on('disconnect', function () {
-            delete onlineusers[socket.id];
-            --numUsers;
+            delete online_status.onlineusers[socket.id];
+            --online_status.numUsers;
             // echo globally that this client has left
             socket.broadcast.emit('user left', {
                 username: socket.username,
-                numUsers: numUsers
+                numUsers: online_status.numUsers
             });
         });
     });
 }
 
 module.exports = socket_app;
-exports.onlineusers = onlineusers;

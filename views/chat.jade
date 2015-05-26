@@ -1,49 +1,48 @@
-extends layout
-block content
-    div#chatSection(class = 'uk-grid')
-        div(id = 'appsect2')
-            div(class = 'onlineuser uk-margin-top uk-margin-left')
-                div.onlineuser1
-                    ul(class='uk-list')
-                        each val in [1, 2, 3, 4, 5, 6, 7, 8]
-                            li
-                                input(type = 'checkbox' name = 'online-user' checked = 'checked' value = val)
-                                label
-                                    i(class = 'uk-icon-user')
-                                    | val
+div#chatSection(class = 'uk-grid' style = 'display:none')
+    div(id = 'appsect2')
+        div(class = 'onlineuser uk-margin-top uk-margin-left')
+            div.onlineuser1
+                ul(class='uk-list')
+                    //-var userlist = users;
+                    //-var colors = ["#3871b6", "#e88c2a", "#b63834", "#91b544", "#990099", "#0099c6", "#eeaaee", "#55BF3B", "#DF5353", "#7798BF", "#aaeeee",'#ffffff', '#000000', '#eeece1', '#1f497d', '#4f81bd', '#c0504d', '#9bbb59', '#8064a2', '#4bacc6', '#f79646', '#ffff00','#7f7f7f', '#0c0c0c', '#1d1b10', '#0f243e', '#244061', '#632423', '#4f6128', '#3f3151', '#31859b', '#974806', '#7f6000','#a5a5a5', '#262626', '#494429', '#17365d', '#366092', '#953734', '#76923c', '#5f497a', '#92cddc', '#e36c09', '#c09100','#bfbfbf', '#3f3f3f', '#938953', '#548dd4', '#95b3d7', '#d99694', '#c3d69b', '#b2a2c7', '#a5d0e0', '#fac08f', '#f2c314','#d8d8d8', '#595959', '#c4bd97', '#8db3e2', '#b8cce4', '#e5b9b7', '#d7e3bc', '#ccc1d9', '#b7dde8', '#fbd5b5', '#ffe694','#f2f2f2', '#7f7f7f', '#ddd9c3', '#c6d9f0', '#dbe5f1', '#f2dcdb', '#ebf1dd', '#e5e0ec', '#dbeef3', '#fdeada', '#fff2ca'];
+                    //each value, key in userlist
+                    //    li
+                    //        input(type = 'checkbox' name = 'online-user' checked = 'checked' value = value.userid)
+                    //        label(style = 'color: '+ colors[value.colorid])
+                    //            i(class = 'uk-icon-user')=value.username
 
 
-        div(id = 'appsect1')
-            div#alert-gbanner(class='uk-alert uk-alert-success' style = 'width: 700px' data-uk-alert)
-                a(href = '#' class='uk-alert-close uk-close' data-uk-alert)
-                h3#greenalert Welcome who to join here
-                div#alert-rbanner(class='uk-alert uk-alert-danger' style = 'width: 700px' data-uk-alert)
-                    a(href = '#' class='uk-alert-close uk-close')
-                    h3#redalert This is a error messages
-            Div.chartArea(class= 'uk-margin-top')
-                div.chartArea1
-                    ul.messagelist(style='list-style-type: none;')
-                        li.onemsg
-                            div.iconmsg(class='icon2 uk-float-left')
-                            div.uk-float-left
-                                h3 ZJ talk
-                                p hello
-                            div(style='clear:both')
-                        li.onemsg
-                            div.iconmsg(class='icon3 uk-float-left')
-                            div
-                                h3 ZJ talk
-                                p hello
-            div(class='uk-margin-top')
-                form(class = 'uk-form')
-                    div.uk-float-left(id='msginputcontainer')
-                        input#chartinput(type = 'text' style='width: 250px;' class = 'uk-margin-right' autocomplete="off" )
-                        button#sendbtn(class = 'uk-button uk-button-success uk-margin-left')
-                            | Send Message
-                            i(class='fa fa-paper-plane uk-margin-left')
-            div#onemsgtemplate(style = 'display:none')
-                li.onemsg
-                    div.iconmsg(class='uk-float-left')
-                    div
-                        h3
-                        p
+    div(id = 'appsect1')
+        div#alert-gbanner(class='uk-alert uk-alert-success' style = 'width: 700px' data-uk-alert)
+            a(href = '#' class='uk-alert-close uk-close' data-uk-alert)
+            h3#greenalert Welcome who to join here
+            div#alert-rbanner(class='uk-alert uk-alert-danger' style = 'width: 700px' data-uk-alert)
+                a(href = '#' class='uk-alert-close uk-close')
+                h3#redalert This is a error messages
+        Div.chartArea(class= 'uk-margin-top')
+            div.chartArea1
+                ul.messagelist(style='list-style-type: none;')
+                    li.onemsg
+                        div.iconmsg(class='icon2 uk-float-left')
+                        div.uk-float-left
+                            h3 ZJ talk
+                            p hello
+                        div(style='clear:both')
+                    li.onemsg
+                        div.iconmsg(class='icon3 uk-float-left')
+                        div
+                            h3 ZJ talk
+                            p hello
+        div(class='uk-margin-top')
+            form(class = 'uk-form')
+                div.uk-float-left(id='msginputcontainer')
+                    input#chartinput(type = 'text' style='width: 250px;' class = 'uk-margin-right' autocomplete="off" )
+                    button#sendbtn(class = 'uk-button uk-button-success uk-margin-left')
+                        | Send Message
+                        i(class='fa fa-paper-plane uk-margin-left')
+        div#onemsgtemplate(style = 'display:none')
+            li.onemsg
+                div.iconmsg(class='uk-float-left')
+                div
+                    h3
+                    p

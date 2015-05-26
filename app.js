@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.locals.pretty = true;
 
 // router infromation start
-app.use(users);
+app.use('/',users);
 app.use('/chat', chat);
 // router information end
 

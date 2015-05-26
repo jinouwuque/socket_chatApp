@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var sio = require('../middlewares/socket_app');
+var sio = require('../middlewares/online_status');
 /* GET chat page. */
 router.get('/', function(req, res, next) {
     res.render('chat', {
